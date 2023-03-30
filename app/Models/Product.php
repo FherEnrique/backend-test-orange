@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Product extends Model
 {
-    use HasFactory;
+    use  HasFactory;
 
-    protected $table = 'users';
+    protected $table = 'products';
 
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'full_name', 'phone_number', 'username', 'date_birth', 'email', 'created_at', 'update_at'
+        'SKU', 'name', 'stock', 'price', 'description', 'image', 'created_at', 'update_at', 
     ];
 
     protected $hidden = [
-        'password', 'deleted_at',
+        'deleted_at',
     ];
 }
