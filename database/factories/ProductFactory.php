@@ -13,11 +13,10 @@ class ProductFactory extends Factory
     {
         return [
             'SKU' => $this->faker->uuid(), 
-            'name' => $this->faker->name(), 
+            'name' => $this->faker->word(), 
             'stock' => $this->faker->numberBetween(1, 20), 
             'price' => $this->faker->numberBetween(1, 20), 
-            'description' => $this->faker->text(), 
-            'image' => $this->faker->word(),
+            'description' => $this->faker->text(),
         ];
     }
 }
