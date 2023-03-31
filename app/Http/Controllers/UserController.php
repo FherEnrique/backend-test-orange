@@ -105,6 +105,5 @@ class UserController extends Controller
                 'error' => 'User not found',
             ], 404);
         }
-        
     }
 }

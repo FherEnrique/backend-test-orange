@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('name')->notNullable();
             $table->string('stock')->notNullable();
             $table->decimal('price', 12, 2)->notNullable();
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
             $table->softDeletes();
