@@ -53,8 +53,7 @@ class ProductController extends Controller
         }
     }
 
-    public function createProduct(Request $request)
-    {
+    public function createProduct(Request $request) {
         $validateRequest = $request->validate([
             'name' => 'required|string|unique:products',
             'stock' => 'required|integer|min:0',
