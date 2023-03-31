@@ -2,9 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\NewPasswordController;
+use App\Http\Controllers\App\UserController;
+use App\Http\Controllers\App\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,7 @@ Route::get('/products/{id}', [ProductController::class, 'readProduct'])->middlew
 Route::post('/products', [ProductController::class, 'createProduct'])->middleware('auth:sanctum');
 Route::patch('/products/{id}', [ProductController::class, 'updateProduct'])->middleware('auth:sanctum');
 Route::delete('/products/{id}', [ProductController::class, 'deleteProduct'])->middleware('auth:sanctum');
+
+// --Reset password endpoints--
+Route::post('forgot-password', [NewPasswordController::class, 'forgotPassword']);
+Route::post('reset-password', [NewPasswordController::class, 'reset']);
