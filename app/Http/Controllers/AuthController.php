@@ -19,14 +19,7 @@ class AuthController extends Controller
             'date_birth' => 'required|date|before:today',
         ]);
 
-        $newUser = User::create([
-            'name' =>$validateRequest['name'],
-            'email' =>$validateRequest['email'],
-            'password' =>Hash::make($validateRequest['password']),
-            'phone_number' =>$validateRequest['phone_number'], 
-            'username' =>$validateRequest['username'], 
-            'date_birth' => $validateRequest['date_birth'],
-        ]);
+        $newUser = User::create($validateRequest);
 
         $token = $newUser->createToken('auth_token')->plainTextToken;
 
